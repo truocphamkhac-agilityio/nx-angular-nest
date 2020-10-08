@@ -21,16 +21,15 @@ $ yarn
 
 ## Run on locally
 
-Run api
+Run multi apps with one command in development
 
 ```bash
-# Development api
-$ npm run start:api
+$ npm start
 ```
 
-Run app
+Workspace information
 
-```bash
-# Development angular app
-$ npm run start:app
-```
+| App     | Port | Description                  |
+|---------|:----:|------------------------------|
+| api     | 3333 | The api built by NestJS      |
+| journal | 4200 | The web app built by Angular |

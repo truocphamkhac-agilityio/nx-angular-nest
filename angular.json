@@ -48,6 +48,20 @@
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "serve-with-services": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "nx serve api"
+              },
+              {
+                "command": "nx serve journal --open"
+              }
+            ],
+            "parallel": true
+          }
         }
       }
     },
