@@ -1,0 +1,14 @@
+FROM node:14.2.0-alpine
+
+RUN npm install -g @angular/cli
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+COPY . ./
+
+RUN npm install --production
+
+EXPOSE 3333
+
+CMD [ "node", "dist/apps/api/main.js" ]

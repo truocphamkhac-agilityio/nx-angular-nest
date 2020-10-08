@@ -30,6 +30,18 @@ $ npm start
 Workspace information
 
 | App     | Port | Description                  |
-|---------|:----:|------------------------------|
+| ------- | :--: | ---------------------------- |
 | api     | 3333 | The api built by NestJS      |
 | journal | 4200 | The web app built by Angular |
+
+## Docker Compose
+
+```bash
+# Run docker compose
+$ docker-compose up
+
+# Clear docker compose
+$ docker-compose down
+```
+
+Open [http://localhost/](http://localhost/) on browser to access journal app

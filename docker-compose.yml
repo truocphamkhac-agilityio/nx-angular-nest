@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+
+  # The api container
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    volumes:
+      - ./apps:/usr/src/app/apps
+      - ./libs:/usr/src/app/libs
+      - ./package.json:/usr/src/app/package.json
+      - ./tsconfig.base.json:/usr/src/app/tsconfig.base.json
+      - nodemodules:/usr/src/app/node_modules
+    networks:
+      - nx-network
+
+  # The webapp container
+  journal:
+    container_name: journal
+    build:
+      context: .
+      dockerfile: Dockerfile.journal
+    ports:
+      - 80:80
+      - 4200:4200
+    networks:
+      - nx-network
+
+networks:
+  nx-network:
+    driver: bridge
+
+volumes:
+  nodemodules:
